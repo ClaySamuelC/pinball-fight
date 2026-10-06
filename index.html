@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Pinball Nexus</title>
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-D3Z9TjrB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DKxpmlX8.css">
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+    <div id="rotate">Widen the window.<br />On a phone, turn it sideways.</div>
+    <div id="topbar">
+      <button id="sound" type="button">SOUND ON</button>
+      <button id="help" type="button">HELP</button>
+    </div>
+    <div id="banner"></div>
+    <div id="helpbox" class="hidden">
+      <div class="card">
+        <h2>HOW TO PLAY</h2>
+        <ul>
+          <li>Hit targets to summon fighters into the lane.</li>
+          <li>The lane fights on its own. Destroy 3 towers, then the core.</li>
+          <li>Drop the ball and you wait 6 seconds. Your combo clears.</li>
+          <li>Combos multiply summons and zone buffs.</li>
+          <li>Orbs give Surge, Nuke, or a Turret.</li>
+          <li>Rush speeds your fighters. Aegis grants shields. Fury raises damage.</li>
+          <li>Destroy a tower and your table gains a bonus. The defender gets orbs.</li>
+        </ul>
+        <p class="controls">Left flipper: A or Left. Right flipper: L or Right. Launch: hold Space.</p>
+        <button id="helpClose" type="button">CLOSE</button>
+      </div>
+    </div>
+    <div id="lobby">
+      <section id="home" class="card">
+        <h1>PINBALL NEXUS</h1>
+        <ul>
+          <li>Hit targets to summon fighters into the lane.</li>
+          <li>The lane fights on its own. Destroy 3 towers, then the core.</li>
+          <li>Drop the ball and you wait 6 seconds. Your combo clears.</li>
+          <li>Orbs and colored zones buff your fighters.</li>
+        </ul>
+        <p class="controls">Left: A or Left. Right: L or Right. Launch: hold Space.</p>
+        <button id="create" type="button">CREATE MATCH</button>
+        <div class="joinrow">
+          <input id="codeInput" maxlength="4" autocomplete="off" spellcheck="false" aria-label="4 letter code" placeholder="CODE" />
+          <button id="join" type="button" class="alt">JOIN</button>
+        </div>
+        <button id="practice" type="button" class="ghost">PRACTICE</button>
+        <p id="homeError" class="error"></p>
+      </section>
+      <section id="wait" class="card hidden">
+        <p class="eyebrow">YOUR CODE</p>
+        <div id="codeView" class="code">AB CD</div>
+        <p id="waitText">Share this code. Your friend enters it on the home screen.</p>
+        <button id="copy" type="button">COPY CODE</button>
+        <button id="cancel" type="button" class="ghost">CANCEL</button>
+      </section>
+    </div>
+    <div id="end" class="hidden">
+      <div class="card">
+        <h2 id="endTitle">YOU WIN</h2>
+        <p id="endBody">The enemy core fell.</p>
+        <button id="again" type="button">PLAY AGAIN</button>
+        <button id="menu" type="button" class="ghost">MENU</button>
+      </div>
+    </div>
+    <div id="touch" class="hidden">
+      <button id="flipL" type="button">LEFT</button>
+      <button id="launch" type="button">LAUNCH</button>
+      <button id="flipR" type="button">RIGHT</button>
+    </div>
+  </body>
+</html>
